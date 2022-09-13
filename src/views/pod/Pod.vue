@@ -577,7 +577,7 @@ export default {
         },
         socketOnOpen() {
             this.socket.onopen = () => {
-                //简历连接成功后，初始化虚拟终端
+                //建立连接成功后，初始化虚拟终端
                 this.initTerm()
             }
         },

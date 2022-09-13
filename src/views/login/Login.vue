@@ -59,7 +59,13 @@ export default{
     },
     methods: {
         //登录方法
-        handleLogin() {
+        async handleLogin() {
+            // 验证表单数据
+            let valid = await this.$refs["loginData"].validate()
+            if (!valid){
+              return false
+            }
+
             httpClient.post(this.loginUrl, this.loginData)
             .then(res => {
                 //账号密码校验成功后的一系列操作
