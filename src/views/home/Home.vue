@@ -316,7 +316,7 @@ export default {
                 //图表数据集
                 dataset: {
                     //维度定义，默认第一个元素表示x轴的数据，其他都是y轴数据
-                    dimensions: ['namespace','pod_num'],
+                    dimensions: ['Namespace','PodNum'],
                     //源数据
                     source: this.podNumNp
                 },
