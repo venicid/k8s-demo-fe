@@ -235,21 +235,23 @@ router.beforeEach((to, from, next) => {
         /**
          * 不验证
          */
-        // next();
-
+        next();
+        if(err){
+            next()
+        }
         /**
          * 验证
          */
         //如果去的路径是/login，直接放行，不需要验证
-        if (to.path === '/login') {
-            next()
-        //如果验证异常，则跳转到/login
-        } else if (err) {
-            next('/login');
-        //如果token合法，则放行
-        } else {
-            next()
-        }
+        // if (to.path === '/login') {
+        //     next()
+        // //如果验证异常，则跳转到/login
+        // } else if (err) {
+        //     next('/login');
+        // //如果token合法，则放行
+        // } else {
+        //     next()
+        // }
 
     });
 });

@@ -7,7 +7,8 @@
                         <el-row>
                             <el-col :span="2">
                                 <div>
-                                    <el-button disabled style="border-radius:2px;" icon="Edit" type="primary">创建</el-button>
+                                    <el-button
+                                        style="border-radius:2px;" icon="Edit" type="primary">创建</el-button>
                                 </div>
                             </el-col>
                             <el-col :span="6">
@@ -192,7 +193,7 @@ export default {
             let date = new Date(new Date(timestamp).getTime() + 8 * 3600 * 1000)
             date = date.toJSON();
             date = date.substring(0, 19).replace('T', ' ')
-            return date 
+            return date
         },
         specTrans(str) {
             if ( str.indexOf('Ki') == -1 ) {
@@ -289,7 +290,7 @@ export default {
             .catch(() => {
                 this.$message.info({
                     message: '已取消操作'
-                })          
+                })
             })
         },
     },
@@ -307,7 +308,7 @@ export default {
     }
     .node-head-search {
         width:160px;
-        margin-right:10px; 
+        margin-right:10px;
     }
     .node-body-nodename {
         margin: 0px;

@@ -249,7 +249,7 @@ export default {
             pagesizeList: [10, 20, 30],
             //
             searchInput: '',
-            namespaceValue: 'default',
+            namespaceValue: '',
             namespaceList: [],
             namespaceListUrl: common.k8sNamespaceList,
             appLoading: false,
@@ -627,9 +627,9 @@ export default {
         }
     },
     beforeMount() {
-        if (localStorage.getItem('namespace') !== undefined && localStorage.getItem('namespace') !== null) {
-            this.namespaceValue = localStorage.getItem('namespace')
-        }
+        // if (localStorage.getItem('namespace') !== undefined && localStorage.getItem('namespace') !== null) {
+        //     this.namespaceValue = localStorage.getItem('namespace')
+        // }
         this.getNamespaces()
         this.getPods()
     },

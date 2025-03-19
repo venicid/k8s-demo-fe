@@ -273,7 +273,7 @@ export default {
             pagesizeList: [10, 20, 30],
             //搜索及命名空间
             searchInput: '',
-            namespaceValue: 'default',
+            namespaceValue: '',
             namespaceList: [],
             namespaceListUrl: common.k8sNamespaceList,
             //列表
@@ -424,13 +424,13 @@ export default {
             let date = new Date(new Date(timestamp).getTime() + 8 * 3600 * 1000)
             date = date.toJSON();
             date = date.substring(0, 19).replace('T', ' ')
-            return date 
+            return date
         },
         timeTransNot8(timestamp) {
             let date = new Date(new Date(timestamp).getTime() + 8 * 3600 * 1000)
             date = date.toJSON();
             date = date.substring(0, 19).replace('T', ' ')
-            return date 
+            return date
         },
         getNamespaces() {
             httpClient.get(this.namespaceListUrl)
@@ -489,7 +489,7 @@ export default {
             .catch(() => {
                 this.$message.info({
                     message: '已取消操作'
-                })          
+                })
             })
         },
         //真正的创建workflow的方法
@@ -603,9 +603,9 @@ export default {
         },
     },
     beforeMount() {
-        if (localStorage.getItem('namespace') !== undefined && localStorage.getItem('namespace') !== null) {
-            this.namespaceValue = localStorage.getItem('namespace')
-        }
+        // if (localStorage.getItem('namespace') !== undefined && localStorage.getItem('namespace') !== null) {
+        //     this.namespaceValue = localStorage.getItem('namespace')
+        // }
         this.getNamespaces()
         this.getWorkflows()
     }
@@ -620,7 +620,7 @@ export default {
     }
     .workflow-head-search {
         width:160px;
-        margin-right:10px; 
+        margin-right:10px;
     }
     .workflow-body-workflowname {
         color: #4795EE;

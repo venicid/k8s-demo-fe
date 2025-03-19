@@ -305,7 +305,7 @@ export default {
             //搜索框内容
             searchInput: '',
             //命名空间
-            namespaceValue: 'default',
+            namespaceValue: '',
             namespaceList: [],
             namespaceListUrl: common.k8sNamespaceList,
             //列表
@@ -701,9 +701,9 @@ export default {
     },
     beforeMount() {
         //加载页面时先获取localStorage中的namespace值，若获取不到则默认default
-        if (localStorage.getItem('namespace') !== undefined && localStorage.getItem('namespace') !== null) {
-            this.namespaceValue = localStorage.getItem('namespace')
-        }
+        // if (localStorage.getItem('namespace') !== undefined && localStorage.getItem('namespace') !== null) {
+        //     this.namespaceValue = localStorage.getItem('namespace')
+        // }
         this.getNamespaces()
         this.getDeployments()
     }

@@ -2,6 +2,9 @@ import axios from 'axios';
 
 //新建个axios对象
 const httpClient = axios.create({
+
+    baseURL: process.env.VUE_APP_BASE_API,
+
     validateStatus(status) {
         return status >= 200 && status < 504 // 设置默认的合法的状态
     },
