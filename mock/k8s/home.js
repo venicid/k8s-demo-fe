@@ -110,7 +110,7 @@ module.exports = [
     },
     // 模拟获取每个命名空间中 Pod 数量接口
     {
-        url: '/api/k8s/pod/num-np',
+        url: '/api/k8s/pod/numnp',
         type: 'get',
         response: () => {
             return {
@@ -121,7 +121,7 @@ module.exports = [
     },
     // 模拟获取每个命名空间中 Deployment 数量接口
     {
-        url: '/api/k8s/deployment/num-np',
+        url: '/api/k8s/deployment/numnp',
         type: 'get',
         response: () => {
             return {
